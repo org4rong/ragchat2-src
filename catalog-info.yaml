@@ -1,0 +1,20 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: "ragchat2-svc"
+  description: "Deploy RAG Chatbot using LLaMA Stack, OpenShift AI, and PGVector"
+  annotations:
+    argocd/app-selector: rht-gitops.com/janus-argocd=ragchat2-svc-bootstrap
+    backstage.io/kubernetes-id: ragchat2-svc
+    janus-idp.io/tekton: ragchat2-svc
+    backstage.io/source-location: url:https://github.com/org4rong/ragchat2-src
+    backstage.io/techdocs-ref: dir:.
+    gitlab.com/project-slug: org4rong/ragchat2-svc
+  tags:
+    - python
+    - rag
+spec:
+  type: service
+  lifecycle: production
+  owner: 
+
